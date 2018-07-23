@@ -1,0 +1,27 @@
+body { margin:0; padding:0; }
+
+#map {  
+height: 500px;
+width: 100%; 
+}
+
+
+.hero {
+    background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(/images/town.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.go-logo {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: auto;
+}
+
+.panel-block {
+    display: block;
+}
+
+.fa-facebook { color: #3B5998;}
