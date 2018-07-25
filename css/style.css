@@ -7,7 +7,8 @@ width: 100%;
 
 
 .hero {
-    background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(/Pokemon-Go-Essex/images/town.jpg);
+    /* background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(/Pokemon-Go-Essex/images/town.jpg); */
+    background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(../images/town.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,3 +26,11 @@ width: 100%;
 }
 
 .fa-facebook { color: #3B5998;}
+.fa-whatsapp { color:#25d366; }
+
+.app-badge { 
+    box-sizing: block;
+    margin: 0 auto;
+    height: 45px;
+    padding: 5px;
+}

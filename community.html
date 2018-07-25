@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/Pokemon-Go-Essex/css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 <body>
 <!-- Navbar + Hero -->
@@ -36,9 +37,11 @@
           <ul>
             <li>
               <a href="/Pokemon-Go-Essex">Home</a>
+              <!-- <a href="/">Home</a> -->
             </li>
             <li class="is-active">
               <a href="/Pokemon-Go-Essex/community">Find a community</a>
+              <!-- <a href="community.html">Find a community</a> -->
             </li>
           </ul>
         </div>
@@ -46,13 +49,11 @@
     </div>
 </section>
 
-
-
 <!-- Map -->
 <section class="section">
   <div class="container">
-      <div class="notification">
-          If you are under the age of  <strong>18</strong> please seek permission from a parent or guardian before joining any public social group.
+      <div class="notification is-warning">
+          If you are under the age of  <strong>18</strong> please seek <strong>permission</strong> from a <strong>parent or guardian</strong> before joining any public social group.
       </div>
       <div class="container">
           <div class="columns is-multiline">
@@ -60,18 +61,89 @@
     <nav class="panel">
       <p class="panel-heading">Essex Groups</p>
       <a class="panel-block" href="https://www.facebook.com/groups/258146364557323/" target="_blank"></i><i class="fab fa-facebook"></i> Essex Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
+      <a class="panel-block" href="https://www.facebook.com/groups/633871263455234/" target="_blank"></i><i class="fab fa-facebook"></i> Open Essex Group <span class="is-pulled-right"> <span class="tag is-success"><i class="fas fa-unlock"></i></span></span></a>
+
     </nav>
   </div>
   <div class="column is-4">
     <nav class="panel">
       <p class="panel-heading">Basildon</p>
-      <a class="panel-block" href="https://www.facebook.com/groups/477672032439797/" target="_blank"></i><i class="fab fa-facebook"></i> Basildon Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
+      <a class="panel-block" href="https://www.facebook.com/groups/477672032439797/" target="_blank"></i><i class="fab fa-facebook"></i> Basildon Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>    
+   
+   
+      <!-- Basildon WhatsApp modal -->
+      <a class="panel-block basildon-toggle-modal" target="_blank"></i><i class="fab fa-whatsapp"></i> Basildon Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
+      <div class="modal" id="modal-basildon-Whatsapp">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title"></i><i class="fab fa-whatsapp"></i> Basildon Group</p>
+              <button class="delete basildon-toggle-modal"></button>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>This group is very active and great for finding out when raids are taken place nearby.</p>
+                <ol>
+                  <li>Join the Essex Facebook group</li>
+                  <li>Create a post asking to join.</li>
+                  <li>Someone will ask you to private message the admin for that group.</li>
+                </ol>
+              </div>
+              </section>
+            <footer class="modal-card-foot">
+              <a class="button is-info basildon-toggle-modal" href="https://www.facebook.com/groups/258146364557323/" target="_blank"></i>Join the Essex Facebook Group</a>
+            </footer>
+          </div>
+        </div>
+
+        <!-- Noak Bridge WhatsApp modal -->
+      <a class="panel-block noakbridge-toggle-modal" target="_blank"></i><i class="fab fa-whatsapp"></i> Noak Bridge Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
+      <div class="modal" id="modal-noakbridge-Whatsapp">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title"></i><i class="fab fa-whatsapp"></i> Noak Bridge Group</p>
+              <button class="delete noakbridge-toggle-modal"></button>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>This group is very active and great for finding out when raids are taken place nearby.</p>
+                <ol>
+                  <li>Join the Essex Facebook group</li>
+                  <li>Create a post asking to join.</li>
+                  <li>Someone will ask you to private message the admin for that group.</li>
+                </ol>
+              </div>
+              </section>
+            <footer class="modal-card-foot">
+              <a class="button is-info noakbridge-toggle-modal" href="https://www.facebook.com/groups/258146364557323/" target="_blank"></i>Join the Essex Facebook Group</a>
+            </footer>
+          </div>
+        </div>
+        
+        <a class="panel-block" href="https://www.facebook.com/groups/636495309836584/" target="_blank"></i><i class="fab fa-facebook"></i> Discussion Group <span class="is-pulled-right"> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>    
+
     </nav>
   </div>
   <div class="column is-4">
     <nav class="panel">
       <p class="panel-heading">Billericay</p>
+      <a class="panel-block" href="https://www.facebook.com/groups/197915097277659/about" target="_blank"></i><i class="fab fa-facebook"></i> Billericay Group <span class="is-pulled-right"> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
       <a class="panel-block" href="https://www.facebook.com/groups/959201364245693/" target="_blank"></i><i class="fab fa-facebook"></i> Raiders Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
+      <a class="panel-block" href="https://www.facebook.com/groups/2078103385540224/" target="_blank"></i><i class="fab fa-facebook"></i> Surrounding Area Group <span class="is-pulled-right"> <span class="tag is-success"><i class="fas fa-unlock"></i></span></span></a>
+    </nav>
+  </div>
+  <div class="column is-4">
+      <nav class="panel">
+        <p class="panel-heading">Brentwood</p>
+        <a class="panel-block" href="https://www.facebook.com/groups/1566132693683267/" target="_blank"></i><i class="fab fa-facebook"></i> Brentwood Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
+        <a class="panel-block" href="https://www.facebook.com/groups/268590930199392/" target="_blank"></i><i class="fab fa-facebook"></i> Open Brentwood Group <span class="is-pulled-right"> <span class="tag is-success"><i class="fas fa-unlock"></i></span></span></a>
+      </nav>
+    </div>
+  <div class="column is-4">
+    <nav class="panel">
+      <p class="panel-heading">Chelmsford</p>
+      <a class="panel-block" href="https://www.facebook.com/groups/550524568483065/" target="_blank"></i><i class="fab fa-facebook"></i> Chelmsford Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-success"><i class="fas fa-unlock"></i></span></span></a>
     </nav>
   </div>
   <div class="column is-4">
@@ -79,12 +151,6 @@
         <p class="panel-heading">Wickford</p>
         <a class="panel-block" href="https://www.facebook.com/groups/1752121898389196/" target="_blank"></i><i class="fab fa-facebook"></i> Wickford Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-danger"><i class="fas fa-lock"></i></span></span></a>
       </nav>
-  </div>
-  <div class="column is-4">
-    <nav class="panel">
-      <p class="panel-heading">Chelmsford</p>
-      <a class="panel-block" href="https://www.facebook.com/groups/550524568483065/" target="_blank"></i><i class="fab fa-facebook"></i> Chelmsford Group <span class="is-pulled-right"><span class="tag is-primary"><i class="fas fa-star"></i></span> <span class="tag is-success"><i class="fas fa-unlock"></i></span></span></a>
-    </nav>
   </div>
   <div class="column is-4">
     <nav class="panel">
@@ -113,6 +179,7 @@
   </div>
 </section>
 
+
 <!-- Footer -->
 <footer class="footer">
     <div class="columns is-small has-text-centered">
@@ -121,6 +188,12 @@
             <strong><a href="https://www.pokemon.com/uk/" target="_blank">Pokémon</a></strong> is Copyright <a href="https://www.gamefreak.co.jp/" target="_blank">Gamefreak</a>, <a href="https://www.nintendo.co.uk/index.html" target="_blank">Nintendo</a> and <a href="https://www.pokemon.com/uk/" target="_blank">The Pokémon Company</a>. All images and names owned and trademarked by <a href="https://www.gamefreak.co.jp/" target="_blank">Gamefreak</a>, <a href="https://www.nintendo.co.uk/index.html" target="_blank">Nintendo</a>, <a href="https://www.gamefreak.co.jp/" target="_blank">Gamefreak</a>, <a href="https://www.nianticlabs.com/" target="_blank">Niantic</a>, The Pokémon Company, and Gamefreak are property of their respective owners.
           </p>
       </div>
+      <div class="column">
+          <h6>Download the Pokémon Go app here:</h6>
+          <a href="https://itunes.apple.com/gb/app/pok%C3%A9mon-go/id1094591345?mt=8" target="_blank"><img class="app-badge"  src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg"></a>
+
+          <a href='https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=en_GB&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img class="app-badge" alt='Get it on Google Play' src='https://cdn.worldvectorlogo.com/logos/google-play-badge.svg'/></a>
+        </div>
       <div class="column">
           <p>
             <strong>Developed by Jack</strong>
