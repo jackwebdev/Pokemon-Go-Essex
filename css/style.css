@@ -1,17 +1,24 @@
-body { margin:0; padding:0; }
+body { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;margin:0; padding:0; }
 
 #map {  
+position: relative;
 height: 500px;
 width: 100%; 
+z-index: 2;
 }
 
+img {
+    pointer-events: none;
+}
 
-.hero {
-    /* background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(/Pokemon-Go-Essex/images/town.jpg); */
-    background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(../images/town.jpg);
+.header {
+    position: relative;
+    background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(/Pokemon-Go-Essex/images/town.jpg);
+    /* background: linear-gradient(rgba(42,154,229,0.8),rgba(42,154,229,0.8)), url(../images/town.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 10;
 }
 
 .go-logo {
@@ -33,4 +40,56 @@ width: 100%;
     margin: 0 auto;
     height: 45px;
     padding: 5px;
+}
+
+.no-padding { position:relative; padding: 0px; z-index: 1;}
+
+.lake-image:hover {
+    cursor: pointer; 
+}
+.center-welcome-box {
+    color: #666666;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.center-welcome-box strong{
+    color: #333333;
+    font-weight: 500;
+}
+
+.trainer-hat {
+    display: block;
+    margin: 0 auto;
+}
+
+.love {
+    padding-top: 40px;;
+	font-size: 12px;
+}
+.footer { padding-bottom: 5px;}
+
+/* Media Queries */
+
+/* Smartphones */
+@media only screen and (max-width : 420px) {
+    .center-welcome-box {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+/* Tablets*/
+@media only screen and (min-width : 420px) {
+    .center-welcome-box {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1200px) {
+    .center-welcome-box {
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
 }

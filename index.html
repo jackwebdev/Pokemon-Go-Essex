@@ -5,6 +5,14 @@
 <meta charset=utf-8 />
 <title>Pokémon Go - Essex</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicons//favicon-16x16.png">
+<link rel="manifest" href="images/favicons//site.webmanifest">
+<link rel="mask-icon" href="images/favicons//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
@@ -12,13 +20,15 @@
   <script src="https://rawgit.com/mapbox/mapbox-gl-leaflet/master/leaflet-mapbox-gl.js"></script>
   <!-- bulma -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/Pokemon-Go-Essex/css/style.css">
   <!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 <body>
 <!-- Navbar + Hero -->
-<section class="hero is-info is-medium">
+<section class="hero is-info is-medium header">
     <div class="hero-head">
     </div>
   
@@ -40,6 +50,7 @@
           <ul>
             <li class="is-active">
               <a href="/Pokemon-Go-Essex/">Home</a>
+              <!-- <a href="/">Home</a> -->
             </li>
             <li>
               <a href="/Pokemon-Go-Essex/community">Find a community</a>
@@ -51,21 +62,39 @@
     </div>
 </section>
 
-<!-- Best Places
-<section class="container">
-  <div class="column">
-    <img src="/images/lake.jpg">
-  </div>
-</section> -->
+<!-- Best Places -->
+<section>
+    <div class="columns is-desktop">
+      <div class="column">
+        <div class="content has-text-centered center-welcome-box">
+          <img class="image is-48x48 trainer-hat" src="/images/group_hat.png"> 
+          <h3>Welcome Trainer!</h3>
+          <p>This site has been created to help the local Essex Community!</p>
+          <p><strong>Remember when playing:</strong></p>
+          <p>To follow the <a href="https://support.pokemongo.nianticlabs.com/hc/en-us/articles/221993967-Pok%C3%A9mon-GO-Trainer-guidelines" target="_blank">Trainer Guidelines</a>.</p>
+          <p>Be alert at all times while playing.</p>
+        </div>
+      </div> 
+      <div class="column lake-image no-padding" onclick="bestLocations()">
+          <a href="/community.html">
+            <img src="/images/lake.jpg"/>
+          </a>
+      </div>
+    </div>
+</section>
+
+
 <!-- Map -->
-<section >
+<section>
     <div id="map"></div>
 </section>
-<div class="container">
-    <div class="notification is-info has-text-centered">
-      This <strong>map</strong> only contains a few pokéstops and gyms.
+  <section class="hero is-info">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p>This <strong>map</strong> only contains a few pokéstops and gyms.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
 <!-- Footer -->
 <footer class="footer">
@@ -73,17 +102,18 @@
         <div class="column">
           <p>
             <strong><a href="https://www.pokemon.com/uk/" target="_blank">Pokémon</a></strong> is Copyright <a href="https://www.gamefreak.co.jp/" target="_blank">Gamefreak</a>, <a href="https://www.nintendo.co.uk/index.html" target="_blank">Nintendo</a> and <a href="https://www.pokemon.com/uk/" target="_blank">The Pokémon Company</a>. All images and names owned and trademarked by <a href="https://www.gamefreak.co.jp/" target="_blank">Gamefreak</a>, <a href="https://www.nintendo.co.uk/index.html" target="_blank">Nintendo</a>, <a href="https://www.gamefreak.co.jp/" target="_blank">Gamefreak</a>, <a href="https://www.nianticlabs.com/" target="_blank">Niantic</a>, The Pokémon Company, and Gamefreak are property of their respective owners.
+            <em>This site is not affiliated with Niantic or Nintendo in anyway.</em>
           </p>
       </div>
       <div class="column">
           <h6>Download the Pokémon Go app here:</h6>
-          <a href="https://itunes.apple.com/gb/app/pok%C3%A9mon-go/id1094591345?mt=8" target="_blank"><img class="app-badge"  src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg"></a>
+          <a href="https://itunes.apple.com/gb/app/pok%C3%A9mon-go/id1094591345?mt=8" target="_blank"><img class="app-badge"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/270px-Download_on_the_App_Store_Badge.svg.png"></a>
 
           <a href='https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=en_GB&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img class="app-badge" alt='Get it on Google Play' src='https://cdn.worldvectorlogo.com/logos/google-play-badge.svg'/></a>
         </div>
       <div class="column">
           <p>
-            <strong>Developed by Jack</strong>
+            <p class="love">Handcrafted with <i class="fas fa-heart" style="color: red;"></i> in Essex by <a href="https://jackwebdev.github.io/" target="_blank">Jack</a></p>
           </p>
        </div>
     </div>
