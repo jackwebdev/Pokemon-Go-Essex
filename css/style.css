@@ -1,4 +1,4 @@
-body { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;margin:0; padding:0; }
+body { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;margin:0; padding:0; overflow: hidden;}
 
 #map {  
 position: relative;
@@ -43,15 +43,24 @@ img {
 }
 
 .no-padding { position:relative; padding: 0px; z-index: 1;}
+.no-marg-
+padding-bottom { padding-bottom: 0; margin-bottom: 0;}
+
+.lake-image {
+    height: auto;
+    width: 100%;
+}
 
 .lake-image:hover {
     cursor: pointer; 
 }
+
 .center-welcome-box {
     color: #666666;
     padding-left: 20px;
     padding-right: 20px;
 }
+
 .center-welcome-box strong{
     color: #333333;
     font-weight: 500;
@@ -75,6 +84,10 @@ img {
     .center-welcome-box {
         padding-top: 40px;
         padding-bottom: 40px;
+    }
+    .modal-button {
+        display: block;
+        margin: 0 auto;
     }
 }
 
