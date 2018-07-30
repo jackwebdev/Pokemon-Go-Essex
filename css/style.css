@@ -35,6 +35,10 @@ img {
 .fa-facebook { color: #3B5998;}
 .fa-whatsapp { color:#25d366; }
 
+.hero-smaller {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 .app-badge { 
     box-sizing: block;
     margin: 0 auto;
@@ -76,6 +80,7 @@ padding-bottom { padding-bottom: 0; margin-bottom: 0;}
 	font-size: 12px;
 }
 .footer { padding-bottom: 5px;}
+
 
 /* Media Queries */
 
