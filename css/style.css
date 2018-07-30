@@ -39,6 +39,9 @@ img {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.sponsor { position: relative; z-index: 2;}
+
 .app-badge { 
     box-sizing: block;
     margin: 0 auto;
@@ -47,8 +50,7 @@ img {
 }
 
 .no-padding { position:relative; padding: 0px; z-index: 1;}
-.no-marg-
-padding-bottom { padding-bottom: 0; margin-bottom: 0;}
+.no-marg-padding-bottom { padding-bottom: 0; margin-bottom: 0;}
 
 .lake-image {
     height: auto;
