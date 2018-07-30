@@ -44,6 +44,4 @@ document.getElementsByTagName("body")[0].oncontextmenu = function(e){ e.preventD
 function bestLocations() {
   console.log('click');
   return window.location.href = '/best-locations';
-  // return window.location.href = '/best-locations.html';
-  
 }
