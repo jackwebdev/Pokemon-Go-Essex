@@ -133,12 +133,6 @@ L.control.locate({
     });
 
 
-// Push both gyms and pokestop to the main markers array
-setTimeout(() => {
-  markers =  gymMarkers.concat(pokestopMarkers);
-  // console.log(markers);
-  // map.on('moveend', renderMarkersInMapView);
-}, 2000);
 
 // Add to laer
 map.addLayer(pokestops);
@@ -156,6 +150,11 @@ var overlays = {
 // Add Layer-Controller to toggle markers
 L.control.layers(baseLayers, overlays).addTo(map);
 
+// Push both gyms and pokestop to the main markers array
+setTimeout(() => {
+  markers =  gymMarkers.concat(pokestopMarkers);
+  // console.log(markers);
+}, 2000);
 
 });
 
@@ -167,16 +166,4 @@ L.control.layers(baseLayers, overlays).addTo(map);
         gymStatus = 'exraid';
       } 
     }
-    // Hide markers not in view
-  //   function renderMarkersInMapView() {
-  //     var mapBounds = map.getBounds();
-  //     for (var i = markers.length -1; i >= 0; i--) {
-  //         var m = markers[i];
-  //         var shouldBeVisible = mapBounds.contains(m.getLatLng());
-  //         if (m._icon && !shouldBeVisible) {
-  //             map.removeLayer(m);
-  //         } else if (!m._icon && shouldBeVisible) {
-  //             map.addLayer(m);
-  //         }
-  //     }
-  // }
+  
