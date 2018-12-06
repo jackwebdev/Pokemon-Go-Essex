@@ -6,7 +6,47 @@ height: 500px;
 width: 100%; 
 z-index: 2;
 }
+#essex-map {  
+    position: relative;
+    height: 700px;
+    width: 100%; 
+    z-index: 2;
+}
+#s2levels {
+    text-align: center;
+    color: #1cab8e;
+    font-size: 20px;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #63fd7f;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: white;
+    -webkit-appearance: none;
+    text-align: center;
+    text-align-last: center;
+ }
+ #s2levels option{
+    text-align: left;
+    color: red;
+ }
+ #s2levels:focus {
+    outline: 0;
+}
+ .selector .option {
+    text-align: center;
+ }
 
+ .s2-select-section .title {
+     padding: 5px;
+     margin: 0px;
+ }
+ @media only screen and (max-width: 600px) {
+    #essex-map {  
+        height: 500px;
+    }
+  }
 img {
     pointer-events: none;
 }
@@ -33,8 +73,9 @@ img {
 }
 
 .fa-facebook { color: #3B5998;}
-.fa-whatsapp { color:#25d366; }
-
+.fa-whatsapp { color: #25d366; }
+.fa-facebook-messenger { color: #3B5998;}
+.fa-discord { color: #7289DA;}
 .hero-smaller {
     padding-top: 20px;
     padding-bottom: 20px;

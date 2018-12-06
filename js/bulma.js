@@ -17,10 +17,20 @@ for (var i = 0; i < noakbridgeElements.length; i++) {
 }
 function noakbridgeToggleClass() { modalNoakbridgeWhatsApp.classList.toggle('is-active'); }
 
+// Billericay
+let modalBillericayWhatsApp = document.getElementById('modal-billericay-Whatsapp');
+let billericayElements = document.getElementsByClassName('billericay-toggle-modal');
+for (var i = 0; i < billericayElements.length; i++) {
+  billericayElements[i].addEventListener('click', billericayToggleClass);
+}
+function billericayToggleClass() { modalBillericayWhatsApp.classList.toggle('is-active'); }
+
+
 // Close Modal
 function closeModal() { 
   modalBasildonWhatsApp.classList.remove('is-active'); 
   modalNoakbridgeWhatsApp.classList.remove('is-active');
+  modalBillericayWhatsApp.classList.remove('is-active');
 }
 
 // Escape Key

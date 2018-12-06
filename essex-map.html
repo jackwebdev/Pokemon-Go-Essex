@@ -7,7 +7,7 @@
 <meta property="og:title" content="Pokémon Go - Essex" />
 <meta property="og:description" content="The offical Essex Pokémon Go site!" />
 <meta property="og:image" content="/images/pokemon-go-essex.jpg" />
-<title>Pokémon Go - Essex</title>
+<title>Pokémon Go - Full Map</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
@@ -27,6 +27,8 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<script src="/js/s2geometry.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120594425-2"></script>
 <script>
@@ -57,21 +59,29 @@ crossorigin=""></script>
 <body>
 <!-- Navbar + Hero -->
 <section class="hero is-info is-medium header">
+    <div class="s2-select-section">
+        <h1 class="title has-text-centered" >Pokémon Go - Essex Map</h1>
+        <select name="s2levels" class="selector" id="s2levels" onchange="changeS2Level(s2levels)">
+            <option value="0">S2 Cells - Off</option>
+            <option value="20">S2 Level 20 - Pokémon Spawn Points</option>
+            <option value="19">S2 Level 19</option>
+            <option value="18">S2 Level 18</option>
+            <option value="17">S2 Level 17 - 1 Pokéstop/Gym Per Cell</option>
+            <option value="16">S2 Level 16</option>
+            <option value="15">S2 Level 15</option>
+            <option value="14">S2 Level 14 - Gym Grouping</option>
+            <option value="13">S2 Level 13 - EX Raid ?</option>
+            <option value="12">S2 Level 12 - EX Raid ?</option>
+            <option value="11">S2 Level 11</option>
+            <option value="10">S2 Level 10 - Weather Conditions</option>
+            <option value="9">S2 Level 9</option>
+            <option value="8">S2 Level 8</option>
+            <option value="7">S2 Level 7</option>
+            <option value="6">S2 Level 6</option>
+          </select>
+    </div>
     <div class="hero-head">
     </div>
-    <div class="hero-body">
-      <a href="/">
-      <!-- <a href="/"> -->
-          <img class="go-logo" src="/images/GO_logo_white.png" alt="Go Logo">
-
-        <h1 class="title has-text-centered">
-          Pokémon Go - Essex
-        </h1>
-        <p class="subtitle has-text-centered">
-          The offical Essex Pokémon Go site.
-        </p>
-        </a>
-      </div>
     </div>
    
   <div class="hero-foot">
@@ -95,37 +105,10 @@ crossorigin=""></script>
     </div>
 </section>
 
-<!-- Best Places -->
-<section>
-    <div class="columns is-desktop">
-      <div class="column">
-        <div class="content has-text-centered center-welcome-box">
-          <img class="image is-48x48 trainer-hat" src="images/group_hat.png"> 
-          <h3>Welcome Trainer!</h3>
-          <p>This site has been created to help the local Essex Community!</p>
-          <p><strong>Remember when playing:</strong></p>
-          <p>To follow the <a href="https://support.pokemongo.nianticlabs.com/hc/en-us/articles/221993967-Pok%C3%A9mon-GO-Trainer-guidelines" target="_blank">Trainer Guidelines</a>.</p>
-          <p>Be alert at all times while playing.</p>
-        </div>
-      </div> 
-      <div class="column lake-image no-padding" onclick="bestLocations()">
-          <a href="/community.html">
-            <img src="images/lake.jpg"/>
-          </a>
-      </div>
-    </div>
-</section>
 
 <!-- Map -->
-<section class="hero is-info sponsor">
-    <div class="hero-body hero-smaller">
-      <div class="container has-text-centered">
-        <p><i class="fas fa-signal"></i><strong> Going Abroad?</strong> Contact <a href="mailto:info@tubular-systems.com?subject=Pokémon Go - Roaming SIM."><u>here</u></a> for the best deals on roaming.</p>
-      </div>
-    </div>
-</section>
 <section>
-    <div id="map"></div>
+    <div id="essex-map"></div>
 </section>
 <section class="hero is-info sponsor">
   <div class="hero-body hero-smaller">
@@ -167,7 +150,8 @@ crossorigin=""></script>
 <!-- BulmaJS -->
 <script src="js/bulma.js"></script>
 <!-- Map -->
-<script src="js/map.js"></script>
+<script src="js/essex-map.js"></script>
+
 </body>
 </html>
 

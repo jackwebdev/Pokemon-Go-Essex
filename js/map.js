@@ -1,3 +1,9 @@
+// DB
+var idGyms = '1qi_xKyrQxbJ5ZyCjZdxT_1Pytk7C2Kjim6igfmc2sN0';
+var idPokestops = '1-RNWRuqAhZqgy7G2oLXlNoWIwdeRyyCpinS_lCQ8cFg'
+var idNests = '1NSKNguQesofI01JInw_OpNLL7Gysm4FEfW6mXXxKmFQ';
+var token = 'pk.eyJ1IjoiamFjazk3IiwiYSI6ImNqbXRjbm80bTBueDUzd3A4YXp0ZXBqZ2oifQ.1i7-ebU8LcnydZ2NbjHchg';
+
 // Maps
 var map;
 var place;
@@ -15,11 +21,6 @@ var gymMarkers = [];
 var nestMarkers = [];
 var pokedexEntryArr = [];
 var pokdexEntry;
-
-// DB
-var idGyms = '1qi_xKyrQxbJ5ZyCjZdxT_1Pytk7C2Kjim6igfmc2sN0';
-var idPokestops = '1-RNWRuqAhZqgy7G2oLXlNoWIwdeRyyCpinS_lCQ8cFg'
-var idNests = '1NSKNguQesofI01JInw_OpNLL7Gysm4FEfW6mXXxKmFQ';
 
 var icons = {
   'pokestop': L.icon({
@@ -44,8 +45,9 @@ document.addEventListener('DOMContentLoaded',function(){
   // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>| Developed by Jack'
   // }).addTo(map);
+  
   //  Pokémon Go Style
-  L.tileLayer('https://api.mapbox.com/styles/v1/jack97/cjjo4zrswhw3l2sm9okqdxh1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamFjazk3IiwiYSI6ImNqam80NHhiYjIydjcza20wd3AwajNzZGIifQ.oHWFzGB3jFhqwftPqWMHPw', 
+  L.tileLayer('https://api.mapbox.com/styles/v1/jack97/cjjo4zrswhw3l2sm9okqdxh1g/tiles/256/{z}/{x}/{y}?access_token=' + token, 
   { attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> | Developed by Jack'}
   ,{foo: 'bar'}).addTo(map);
 
@@ -134,8 +136,8 @@ L.control.locate({
 
 
 
-// Add to laer
-map.addLayer(pokestops);
+// Add to layer
+//map.addLayer(pokestops); //hide pokestops to reduce lag
 map.addLayer(gyms);
 map.addLayer(exraids);
 map.addLayer(nests);
@@ -144,7 +146,7 @@ var baseLayers = {};
 var overlays = {
   "Pokestop": pokestops,  
   "Gyms": gyms,
-  "Exraids": exraids,
+  "Exraid Gyms": exraids,
   "Nests": nests,
 };
 // Add Layer-Controller to toggle markers
