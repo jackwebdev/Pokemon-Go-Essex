@@ -125,7 +125,7 @@ L.control.locate({
           // Get the image from pokedex entry and set it to the icon
           iconNest = {
           'nest': L.icon({
-            iconUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + Number(place.pokedexentry) + '.png',
+            iconUrl: checkSprite(Number(place.pokedexentry)),
             iconSize:     [80,80]}),
           }
           // Add to markers array
@@ -189,6 +189,15 @@ function onDrag() {
       } 
     }
 
+
+    function checkSprite(spriteId) {
+      if(spriteId === 0 ) {
+        return "https://pokemon-go-essex.co.uk/images/icons/unknownnest.png"
+      }
+        else {
+          return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + spriteId + '.png'
+        }
+    }
 
 ////////////////////////////////////////////////////////////////////
 //Big thank you to pgmap.org as this is the same method! 
