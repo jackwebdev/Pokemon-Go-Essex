@@ -22,6 +22,11 @@ var nestMarkers = [];
 var pokedexEntryArr = [];
 var pokdexEntry;
 
+//cluster
+var clusterGyms = L.markerClusterGroup();
+var clusterExraids = L.markerClusterGroup();
+var clusterNests = L.markerClusterGroup();
+var clusterPokestops = L.markerClusterGroup();
 
 var icons = {
   'pokestop': L.icon({
@@ -72,18 +77,18 @@ L.control.locate({
           // Add to markers array
           gymMarkers.push(
             // Gymstatus checks to display correct icon.
-          L.marker([place.latitude, place.longitude], {icon: icons['exraid']})
+            clusterExraids.addLayer(L.marker([place.latitude, place.longitude], {icon: icons['exraid']})
             .addTo(exraids)
             .bindPopup('<h3 class="marker-header">' + place.title + '</h3><p class="marker-text">' + place.description + '</p>')
-        );
+        ));
         } else {
             // Add to markers array
             gymMarkers.push(
             // Gymstatus checks to display correct icon.
-            L.marker([place.latitude, place.longitude], {icon: icons['gym']})
+            clusterGyms.addLayer(L.marker([place.latitude, place.longitude], {icon: icons['gym']})
               .addTo(gyms)
               .bindPopup('<h3 class="marker-header">' + place.title + '</h3><p class="marker-text">' + place.description + '</p>')
-            );
+            ));
         }
       }
     },
@@ -100,10 +105,10 @@ L.control.locate({
         // console.log(place);
         // Add to markers array
         pokestopMarkers.push(
-          L.marker([place.latitude, place.longitude], {icon: icons['pokestop']})
+          clusterPokestops.addLayer(L.marker([place.latitude, place.longitude], {icon: icons['pokestop']})
           .addTo(pokestops)
           .bindPopup('<h3 class="marker-header">' + place.title + '</h3><p class="marker-text">' + place.description + '</p>')
-        );
+        ));
       }
     },
     simpleSheet: true 
@@ -125,10 +130,10 @@ L.control.locate({
           }
           // Add to markers array
           nestMarkers.push(
-            L.marker([place.latitude, place.longitude], {icon: iconNest['nest']})
+            clusterNests.addLayer(L.marker([place.latitude, place.longitude], {icon: iconNest['nest']})
             .addTo(nests)
             .bindPopup('<h3 class="marker-header">' + place.title + '</h3><p class="marker-text">' + place.description + '</p>')
-          );
+          ));
         }
       },
       simpleSheet: true 
@@ -136,19 +141,25 @@ L.control.locate({
 
 // Add to layer
 //map.addLayer(pokestops); //hide pokestops to reduce lag
-map.addLayer(gyms);
-map.addLayer(exraids);
-map.addLayer(nests);
+// map.addLayer(gyms);
+// map.addLayer(exraids);
+map.addLayer(clusterNests);
+map.addLayer(clusterExraids);
+map.addLayer(clusterGyms);
+map.addLayer(clusterPokestops)
 // Layers for the marker controlUI
 var baseLayers = {};
 var overlays = {
-  "Pokestop": pokestops,  
-  "Gyms": gyms,
-  "Exraid Gyms": exraids,
-  "Nests": nests,
+  "Pokestop": clusterPokestops,  
+  "Gyms": clusterGyms,
+  "Exraid Gyms": clusterExraids,
+  "Nests": clusterNests,
 };
 // Add Layer-Controller to toggle markers
 L.control.layers(baseLayers, overlays).addTo(map);
+
+
+
 
 // Push both gyms and pokestop to the main markers array
 setTimeout(() => {
