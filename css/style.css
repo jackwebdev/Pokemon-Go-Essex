@@ -12,6 +12,24 @@ z-index: 2;
     width: 100%; 
     z-index: 2;
 }
+#menu-map-style {
+    position: relative;
+    background-color: #209cee;
+    color: white;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 3;
+}
+#menu-map-style input {
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+#menu-map-style input:checked {
+    background-color: #2196F3 !important;
+  }
+  
 #s2levels {
     text-align: center;
     color: #1cab8e;

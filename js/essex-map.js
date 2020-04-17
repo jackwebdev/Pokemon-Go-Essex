@@ -22,11 +22,16 @@ var nestMarkers = [];
 var pokedexEntryArr = [];
 var pokdexEntry;
 
+// Marker Cluster Zoom
+var radius = function(zoom) {
+  return 80;
+};
+
 //cluster
-var clusterGyms = L.markerClusterGroup();
-var clusterExraids = L.markerClusterGroup();
+var clusterGyms = L.markerClusterGroup({ disableClusteringAtZoom: 14, maxClusterRadius: 100, animateAddingMarkers: true });
+var clusterExraids = L.markerClusterGroup({ disableClusteringAtZoom: 14, maxClusterRadius: 100, animateAddingMarkers: true });
 var clusterNests = L.markerClusterGroup();
-var clusterPokestops = L.markerClusterGroup();
+var clusterPokestops = L.markerClusterGroup({ disableClusteringAtZoom: 14, maxClusterRadius: 100, animateAddingMarkers: true });
 
 var icons = {
   'pokestop': L.icon({
@@ -52,7 +57,8 @@ document.addEventListener('DOMContentLoaded',function(){
   // }).addTo(map);
   
   //  Pokémon Go Style
-  L.tileLayer('https://api.mapbox.com/styles/v1/jack97/cjjo4zrswhw3l2sm9okqdxh1g/tiles/256/{z}/{x}/{y}?access_token=' + token, 
+  var mapboxTileUrl = 'https://api.mapbox.com/styles/v1/jack97/cjjo4zrswhw3l2sm9okqdxh1g/tiles/256/{z}/{x}/{y}?access_token=' + token;
+  L.tileLayer(mapboxTileUrl, 
   { attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> | Developed by Jack'}
   ,{foo: 'bar'}).addTo(map);
 
@@ -157,6 +163,33 @@ var overlays = {
 };
 // Add Layer-Controller to toggle markers
 L.control.layers(baseLayers, overlays).addTo(map);
+
+
+// Change map style
+var layerList = document.getElementById('menu-map-style');
+var inputs = layerList.getElementsByTagName('input');
+ 
+function switchLayer(layer) {
+  var layerId = layer.target.id;
+  console.log("Switching: " + layerId)
+  if(layerId === 'Pogo') {
+    // map.setStyle(mapboxTileUrl)
+    L.tileLayer(mapboxTileUrl).addTo(map);
+    
+  } else {
+    L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', 
+      { 
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3'],
+      }
+      ).addTo(map);
+  }
+  // map.setStyle('mapbox://styles/mapbox/' + layerId);
+}
+ 
+for (var i = 0; i < inputs.length; i++) {
+inputs[i].onclick = switchLayer;
+}
 
 
 
